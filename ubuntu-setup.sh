@@ -56,7 +56,7 @@ sudo DEBIAN_FRONTEND=noninteractive \
 # Installing packages
 echo -e "\n================== INSTALLING & CONFIGURING PACKAGES ==================\n"
 sudo apt update
-sudo apt full-upgrade -y
+sudo apt full-upgrade -y -qq
 sudo apt install -y bc bison build-essential curl flex g++-multilib gcc-multilib git gnupg gperf \
                         imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool \
                         libncurses5-dev libsdl1.2-dev libxml2 libxml2-utils lzop pngcrush \
@@ -71,7 +71,7 @@ curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.s
 sudo apt install -y libwxgtk3.0-dev git-lfs
 fi
 
-sudo apt autoremove -y
+sudo apt autoremove -y -qq
 
 # Install git-repo
 mkdir bin
@@ -84,7 +84,9 @@ ccache -C -z;ccache -F 0;ccache -M 0
 
 # Install Android SDK
 echo -e "\n================== INSTALLING ANDROID SDK ==================\n"
+if [ ! -e platform-tools-latest-linux.zip ]; then
 wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip
+fi;
 unzip platform-tools-latest-linux.zip
 rm platform-tools-latest-linux.zip
 
