@@ -55,9 +55,9 @@ sudo DEBIAN_FRONTEND=noninteractive \
 
 # Installing packages
 echo -e "\n================== INSTALLING & CONFIGURING PACKAGES ==================\n"
-sudo apt -qq update
-sudo apt full-upgrade -y -qq
-sudo apt install -y -qq bc bison build-essential curl flex g++-multilib gcc-multilib git gnupg gperf \
+sudo apt update
+sudo apt full-upgrade -y
+sudo apt install -y bc bison build-essential curl flex g++-multilib gcc-multilib git gnupg gperf \
                         imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool \
                         libncurses5-dev libsdl1.2-dev libxml2 libxml2-utils lzop pngcrush \
                         schedtool squashfs-tools xsltproc zip zlib1g-dev unzip openjdk-8-jdk python ccache \
@@ -65,13 +65,13 @@ sudo apt install -y -qq bc bison build-essential curl flex g++-multilib gcc-mult
                         python-dev python3-dev
 
 if [[ $(lsb_release -rs) == "20"* ]]; then
-sudo apt install -y -qq libwxgtk3.0-gtk3-dev
+sudo apt install -y libwxgtk3.0-gtk3-dev
 else
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-sudo apt install -y -qq libwxgtk3.0-dev git-lfs
+sudo apt install -y libwxgtk3.0-dev git-lfs
 fi
 
-sudo apt autoremove -y -qq
+sudo apt autoremove -y
 
 # Install git-repo
 mkdir bin
