@@ -157,6 +157,7 @@ echo "set-option -g history-limit 6000" >> ~/.tmux.conf
 # Configure git
 echo -e "\n================== CONFIGURING GIT ==================\n"
 
+git config --global credential.helper store
 git config --global user.email "hafizuddinismail552@gmail.com"
 git config --global user.name "HafizZiq"
 git config --global alias.cp 'cherry-pick'
