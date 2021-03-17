@@ -141,7 +141,7 @@ fi
 EOF
 
 # Set time zone to IST
-sudo ln -sf /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
+sudo ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 # Set env from .bashrc and .profile
 source .profile
@@ -158,8 +158,8 @@ echo "set-option -g history-limit 6000" >> ~/.tmux.conf
 echo -e "\n================== CONFIGURING GIT ==================\n"
 
 git config --global credential.helper store
-git config --global user.email "hafizuddinismail552@gmail.com"
-git config --global user.name "HafizZiq"
+git config --global user.email "muhammadiyan1362@gmail.com"
+git config --global user.name "MhdIyan7252"
 git config --global alias.cp 'cherry-pick'
 git config --global alias.c 'commit'
 git config --global alias.f 'fetch'
